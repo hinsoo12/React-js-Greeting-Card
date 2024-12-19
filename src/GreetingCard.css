@@ -1,0 +1,33 @@
+.card {
+    padding: 30px;
+    border-radius: 15px;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: 'Arial, sans-serif';
+    transition: transform 0.2s;
+    }
+    
+    .card:hover {
+    transform: scale(1.05);
+    }
+    
+    .greeting {
+    color: #333;
+    font-size: 2em;
+    margin-bottom: 10px;
+    }
+    
+    .sub-greeting {
+    color: #666;
+    font-size: 1.5em;
+    }
+    
+    input, select {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+    }
+    
