@@ -10,8 +10,6 @@ A simple and dynamic greeting card application built with React JS. This project
 
 •  Selectable greeting type
 
-•  Changeable background color
-
 •  Interactive and responsive design
 
 
@@ -53,41 +51,39 @@ import React, { useState } from 'react';
 import './GreetingCard.css';
 
 function GreetingCard() {
-const [name, setName] = useState('John Doe');
-const [message, setMessage] = useState('How are you doing today?');
-const [greetingType, setGreetingType] = useState('Hello');
-const [bgColor, setBgColor] = useState('#f0f8ff');
+  const [name, setName] = useState("John Doe");
+  const [message, setMessage] = useState("How are you doing today?");
+  const [greetingType, setGreetingType] = useState("Hello");
 
-return (
-<div className="card" style={{ backgroundColor: bgColor }}>
-<h1 className="greeting">{greetingType}, {name}!</h1>
-<h2 className="sub-greeting">{message}</h2>
-<input 
-type="text" 
-placeholder="Enter your name" 
-onChange={(e) => setName(e.target.value)} 
-/>
-<input 
-type="text" 
-placeholder="Enter your message" 
-onChange={(e) => setMessage(e.target.value)} 
-/>
-<select onChange={(e) => setGreetingType(e.target.value)}>
-<option value="Hello">Hello</option>
-<option value="Hi">Hi</option>
-<option value="Greetings">Greetings</option>
-<option value="Welcome">Welcome</option>
-</select>
-<input 
-type="color" 
-onChange={(e) => setBgColor(e.target.value)} 
-value={bgColor}
-/>
-</div>
-);
+  return (
+    <div className="card">
+      <h1 className="greeting">
+        {greetingType}, {name}!
+      </h1>
+      <h2 className="sub-greeting">{message}</h2>
+      <input
+        type="text"
+        placeholder="Enter your name"
+        onChange={(e) => setName(e.target.value)}
+      />
+      <input
+        type="text"
+        placeholder="Enter your message"
+        onChange={(e) => setMessage(e.target.value)}
+      />
+      <select onChange={(e) => setGreetingType(e.target.value)}>
+        <option value="Hello">Select Greeting</option>
+        <option value="Hello">Hello</option>
+        <option value="Hi">Hi</option>
+        <option value="Greetings">Greetings</option>
+        <option value="Welcome">Welcome</option>
+      </select>
+    </div>
+  );
 }
 
 export default GreetingCard;
+
 
 GreetingCard.css
 This file contains the styles for the greeting card component.
@@ -124,6 +120,21 @@ border-radius: 5px;
 border: 1px solid #ccc;
 font-size: 1em;
 }
+
+then use it in App.js
+import './App.css';
+import GreetingCard from './GreetingCard';
+
+function App() {
+  return (
+    <div>
+      <GreetingCard/>
+    </div>
+  );
+}
+
+export default App;
+
 
 Contributing
 Feel free to submit issues or pull requests if you have any suggestions or improvements.
